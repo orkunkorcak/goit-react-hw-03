@@ -1,0 +1,21 @@
+.contactDiv{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+.contactElem {
+    width: 270px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 1px red;
+}
+.contactInfo{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
