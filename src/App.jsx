@@ -3,6 +3,7 @@ import ContactForm from "./components/contactForm/ContactForm";
 import SearchBox from "./components/searchBox/SearchBox";
 import ContactList from "./components/contactList/ContactList";
 import { nanoid } from "nanoid";
+import css from "./App.module.css";
 
 function App() {
   const [contacts, setContacts] = useState(() => {
@@ -61,15 +62,11 @@ function App() {
   const filteredContacts = getFilteredContacts();
 
   return (
-    <div>
-      <h1>Phonebook</h1>
+    <div className={css.container}>
+      <h1 className={css.mainTitle} >Phonebook</h1>
 
       <ContactForm onAddContact={addContact} />
-
-      <h2>Find contacts by name</h2>
-
       <SearchBox filter={filter} onChange={handleFilterChange} />
-
       <ContactList
         contacts={filteredContacts}
         onDeleteContact={deleteContact}

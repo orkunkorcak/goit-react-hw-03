@@ -1,21 +1,18 @@
 .contactDiv{
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    width: 200px;
+ border: solid 1px #e9ec0fee;
 
 }
-.contactElem {
-    width: 270px;
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: solid 1px red;
+.dltButton{
+    background-color: #242424;
+    color: #e9ec0fee;
+    border: solid 1px #e9ec0fee;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
 }
-.contactInfo{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
+.dltButton:hover{
+    background-color: #e9ec0fee;
+    color: #242424;
 }

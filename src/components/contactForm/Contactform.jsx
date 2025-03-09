@@ -1,17 +1,18 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-
+import css from "./contactForm.module.css"
 
 const ContactForm = ({ onAddContact }) => {
   const validationSchema = Yup.object({
     name: Yup.string()
-      .min(3, "Minimum 3 karakter olmalı")
-      .max(50, "Maximum 50 karakter olabilir")
-      .required("Zorunlu alan"),
+      .min(3, "Minimum 3 characters required")
+      .max(50, "Maximum 50 characters required")
+      .required("*Required"),
     number: Yup.string()
-      .min(3, "Minimum 3 karakter olmalı")
-      .max(50, "Maximum 50 karakter olabilir")
-      .required("Zorunlu alan"),
+      .matches(/^[0-9-]+$/, "Only numbers and hyphens are allowed")
+      .min(3, "Minimum 3 characters required")
+      .max(50, "Maximum 50 characters required")
+      .required("*Required"),
   });
 
   const initialValues = {
@@ -30,20 +31,20 @@ const ContactForm = ({ onAddContact }) => {
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
-      <Form>
-        <label>
+      <Form className={css.contactForm}>
+        <label className={css.label}>
           Name
           <Field name="name" type="text" />
           <ErrorMessage name="name" component="div" />
         </label>
 
-        <label>
+        <label className={css.label}>
           Number
           <Field name="number" type="text" />
           <ErrorMessage name="number" component="div" />
         </label>
 
-        <button type="submit">Add contact</button>
+        <button className={css.formButton} type="submit">Add contact</button>
       </Form>
     </Formik>
   );

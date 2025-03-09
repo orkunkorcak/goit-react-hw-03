@@ -1,3 +1,4 @@
+import css from "./contact.module.css";
 
 function Contact({ id, name, number, onDeleteContact }) {
   const handleDelete = () => {
@@ -5,13 +6,12 @@ function Contact({ id, name, number, onDeleteContact }) {
   };
 
   return (
-    <div>
+    <div className={css.contactDiv}>
       <div>
         <p>{name}</p>
-
         <p>{number}</p>
       </div>
-      <button onClick={handleDelete}>Delete</button>
+      <button className={css.dltButton} onClick={handleDelete}>Delete</button>
     </div>
   );
 }
