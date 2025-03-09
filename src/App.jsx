@@ -63,14 +63,18 @@ function App() {
 
   return (
     <div className={css.container}>
-      <h1 className={css.mainTitle} >Phonebook</h1>
+      <h1 className={css.mainTitle}>Phonebook</h1>
 
       <ContactForm onAddContact={addContact} />
       <SearchBox filter={filter} onChange={handleFilterChange} />
-      <ContactList
-        contacts={filteredContacts}
-        onDeleteContact={deleteContact}
-      />
+      {filteredContacts.length > 0 ? (
+        <ContactList
+          contacts={filteredContacts}
+          onDeleteContact={deleteContact}
+        />
+      ) : (
+        <p className={css.matchesPTag}>No matches found</p>
+      )}
     </div>
   );
 }
