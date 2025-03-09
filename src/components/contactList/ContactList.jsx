@@ -1,5 +1,5 @@
 import Contact from "../contact/Contact";
-import css from "./contactList.module.css";
+import css from "./ContactList.module.css";
 
 function ContactList({ contacts, onDeleteContact }) {
   return (

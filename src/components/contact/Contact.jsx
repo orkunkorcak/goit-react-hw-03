@@ -1,5 +1,5 @@
 
-import css from "./contact.module.css";
+import css from "./Contact.module.css";
 
 function Contact({ id, name, number, onDeleteContact }) {
   const handleDelete = () => {
